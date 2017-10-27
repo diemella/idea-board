@@ -25,6 +25,8 @@ require 'json'
 require 'bcrypt'
 require 'pry'
 
+require 'twitter'
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
@@ -48,3 +50,13 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+
+# twitter
+
+$client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = ENV['YOUR_CONSUMER_KEY']
+  config.consumer_secret     = ENV['YOUR_CONSUMER_SECRET']
+  config.access_token        = ENV['YOUR_ACCESS_TOKEN']
+  config.access_token_secret = ENV['YOUR_ACCESS_SECRET']
+end

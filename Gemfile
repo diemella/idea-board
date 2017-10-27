@@ -21,6 +21,8 @@ gem 'shotgun'
 gem 'bcrypt'
 gem 'pry'
 
+gem 'twitter'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

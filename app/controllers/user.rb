@@ -45,7 +45,7 @@ end
 
 get '/users/profile' do
   if current_user
-    @items = current_user.items
+    @ideas = current_user.ideas
     erb :'/users/profile'
   else
     redirect '/users/login'

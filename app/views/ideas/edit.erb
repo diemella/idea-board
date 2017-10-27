@@ -1,0 +1,21 @@
+<!-- <div class="container"> -->
+  <h2>Edit Page</h2>
+
+  <p><%= @error if @error %></p>
+
+  <form method="post" action="/ideas/<%= @idea.id %>">
+    <input type="hidden" name="_method" value="put">
+
+    <label>Title:</label><br>
+    <input type="text" name="idea[title]" value="<%= @idea.try(:title) %>"><br><br>
+
+    <label>Content:</label><br>
+    <textarea name="idea[content]" placeholder="<%= @idea.try(:content) %>"></textarea><br><br>
+
+    <label>Share?</label>
+    <input type="radio" name="public" value="true"><span> Yes</span>
+    <input type="radio" name="public" value="false"><span> No</span><br><br>
+
+    <input type="submit" value="Update">
+  </form>
+<!-- </div> -->

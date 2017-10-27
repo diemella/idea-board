@@ -1,19 +1,27 @@
 <!-- <div class="container"> -->
-  <h2><%= current_user.username %>'s Ideas</h2>
+  <h2><%= current_user.first_name %>'s Ideas</h2>
 
   <p>Jot down your ideas <a href="/ideas/new">here</a></p>
 
-    <% @ideas.each do |idea| %>
     <ul>
-      <li><a href="/ideas/<%= idea.id %>"><%= idea.name %></a>
+      <% @ideas.each do |idea| %>
+      <li>
+        <h2><%= idea.title %></h2></a>
+        <p>
+          <% if idea.public %>
+            <i>(public)</i>
+          <% else %>
+            <i>(private)</i>
+          <% end %>
+        </p>
+        <p><%= idea.content %></p>
         <a href="/ideas/<%= idea.id %>/edit">Edit</a>
         <form method="post" action="/ideas/<%= idea.id %>">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Delete">
         </form>
       </li>
+      <% end %>
     </ul>
-    <% end %>
-  <% end %>
 
 <!-- </div> -->

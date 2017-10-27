@@ -1,0 +1,19 @@
+<!-- <div class="container"> -->
+  <h2><%= current_user.username %>'s Ideas</h2>
+
+  <p>Jot down your ideas <a href="/ideas/new">here</a></p>
+
+    <% @ideas.each do |idea| %>
+    <ul>
+      <li><a href="/ideas/<%= idea.id %>"><%= idea.name %></a>
+        <a href="/ideas/<%= idea.id %>/edit">Edit</a>
+        <form method="post" action="/ideas/<%= idea.id %>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      </li>
+    </ul>
+    <% end %>
+  <% end %>
+
+<!-- </div> -->

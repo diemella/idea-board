@@ -3,16 +3,24 @@
 <head>
 
   <link rel="stylesheet" href="/css/normalize.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
 
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Idea Board | Diem McLaughlin</title>
 </head>
 <body>
+  <a href="/">Home</a>
+  <% if current_user %>
+    <a href="/users/profile">Profile</a>
+    <a href="/users/logout">Logout</a>
+  <% else %>
+    <a href="/users/login">Login</a>
+    <a href="/users/register">Register</a>
+  <% end %>
   <%= yield %>
 </body>
 </html>

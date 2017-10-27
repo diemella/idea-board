@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   # validations
-  validates :email, :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   # associations
   has_many :ideas, foreign_key: "creator_id"

@@ -3,16 +3,17 @@
 
   <p><%= @error if @error %></p>
 
-  <form method="post" action="/ideas">
+
+  <form method="post" action="/ideas" class="notes">
     <label>Title:</label><br>
-    <input type="text" name="title"><br><br>
+    <input type="text" name="title"><br>
 
     <label>Content:</label><br>
-    <textarea name="content"></textarea><br><br>
+    <textarea name="content"></textarea><br>
 
     <label>Share?</label>
     <input type="radio" name="public" value="true"><span> Yes</span>
-    <input type="radio" name="public" value="false"><span> No</span><br><br>
+    <input type="radio" name="public" value="false"><span> No</span><br>
 
     <input type="submit" value="Save">
   </form>

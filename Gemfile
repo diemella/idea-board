@@ -32,5 +32,7 @@ end
 
 group :test, :development do
   gem 'factory_girl'
-  gem 'faker', '~> 1.7.3'
+  # gem 'faker', '~> 1.7.3'
 end
+
+gem 'faker', '~> 1.7.3'
